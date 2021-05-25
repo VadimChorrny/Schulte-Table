@@ -1,0 +1,44 @@
+﻿<Window x:Class="Schulte_Table.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Schulte_Table"
+        mc:Ignorable="d"
+        Title="Shulte Table" Height="450" Width="800">
+    <Grid>
+        <!--Set Column and Row Collections-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="69*"/>
+            <RowDefinition Height="158*"/>
+            <RowDefinition Height="158*"/>
+            <RowDefinition Height="69*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="256*"/>
+            <ColumnDefinition Width="256*"/>
+            <ColumnDefinition Width="256*"/>
+        </Grid.ColumnDefinitions>
+        <!--Set Start-Button -->
+        <Button Grid.Column="0" FontSize="15" FontWeight="Bold" Background="Azure" Margin="28,19,28,19" Click="Button_Click">
+            START
+        </Button>
+        <!--Set Slider-->
+        <Slider x:Name="slider" Maximum="100" Ticks="0,5,10,15,20,25,30" TickPlacement="TopLeft" IsSnapToTickEnabled="True" Value="10" Foreground="#FFC30000" Margin="0,30,0,151" Grid.Column="1" Grid.RowSpan="2" />
+        
+        <!--Image Refresh-->
+        <Image Grid.Column="2" Source="C:\Users\vadim_oyanwuw\source\repos\Schulte_Table\Schulte_Table\Image\refresh.png" Name="imgRefresh" MouseDown="imgRefresh_MouseDown"></Image>
+
+        <!--Sey Buttons for Pressed-->
+        <Button x:Name="btn1" Grid.Row="1" Grid.Column="1" FontSize="30" Content="0" Click="btn1_Click"/>
+        <Button x:Name="btn2" Margin="0,151,0,0" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" FontSize="30" Content="0" Click="btn1_Click"/>
+        <Button x:Name="btn3" Margin="266,0,0,0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontSize="30" Content="0" Click="btn1_Click"/>
+        <Button x:Name="btn4" Margin="266,151,0,0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" FontSize="30" Content="0" Click="btn1_Click"/>
+        <Button x:Name="btn5" Margin="0,0,266,0" Grid.Row="1" Grid.ColumnSpan="2" FontSize="30" Content="0" Click="btn1_Click"/>
+        <Button x:Name="btn6" Margin="0,151,266,0" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" FontSize="30" Content="0" Click="btn1_Click"/>
+        <!--Set Timer--> 
+        <ProgressBar Foreground="DarkCyan" Name="progressBar" Height="30" Maximum="100" Minimum="0" Value="0" Width="200" Grid.Row="3" Grid.Column="2" />
+        <Label Grid.Row="3" FontSize="30" Name="lblTime" Content="Time: "/> 
+        <Label Grid.Row="3" Grid.Column="1" FontSize="30" Name="lblScore" Content="Score: "/> 
+    </Grid>
+</Window>
